@@ -21,13 +21,32 @@ const AuthState = props => {
     isAuthenticated: null,
     loading: true,
     error: null,
-    user: null
+    user: ''
   }
 
 
   const [state, dispatch] = useReducer(AuthReducer, initialState);
 
   // Load User
+  const loadUser = async () => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': localStorage.token
+      }
+    }
+    try {
+      const res = await axios.get('/api/auth', config);
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data
+      })
+    } catch (err) {
+      dispatch({
+        type: AUTH_ERROR
+      })
+    }
+  }
 
   // Register User
   const register = async (formData) => {
@@ -44,6 +63,7 @@ const AuthState = props => {
         type: REGISTER_SUCCESS,
         payload: res.data
       })
+      loadUser();
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL,
@@ -73,6 +93,7 @@ const AuthState = props => {
         user: state.user,
         register,
         clearErrors,
+        loadUser
       }}>
       {props.children}
     </AuthContext.Provider>

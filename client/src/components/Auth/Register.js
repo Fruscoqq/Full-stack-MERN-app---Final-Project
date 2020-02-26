@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/Alert/alertContext';
 import AuthContext from '../../context/AuthContext/authContext';
 
-const Register = () => {
+const Register = (props) => {
 
   const [user, setUser] = useState({
     studentId: '',
@@ -17,11 +17,19 @@ const Register = () => {
   const authContext = useContext(AuthContext);
 
   useEffect(() => {
+    if (authContext.isAuthenticated && authContext.user.role === 'Student') {
+      props.history.push('/student')
+      // console.log(authContext.user);
+    }
+    else if (authContext.isAuthenticated && authContext.user.role === 'Teacher') {
+      props.history.push('/teacher')
+    }
+
     if (authContext.error !== null) {
       alertContext.setAlert('danger', authContext.error)
     }
     authContext.clearErrors();
-  }, [authContext.error])
+  }, [authContext.error, authContext.isAuthenticated, authContext.user, props.history])
 
   const { studentId, name, email, password, password2, role } = user;
 
