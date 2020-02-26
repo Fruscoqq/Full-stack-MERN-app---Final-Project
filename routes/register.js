@@ -60,9 +60,6 @@ router.post('/', [
     res.status(400).json({ msg: "Server Error" })
   }
 
-
-
-
 });
 
 module.exports = router;
