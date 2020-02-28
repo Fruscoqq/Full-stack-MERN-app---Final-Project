@@ -7,8 +7,7 @@ const TopicSchema = mongoose.Schema({
   },
   studentId: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   title: {
     type: String,

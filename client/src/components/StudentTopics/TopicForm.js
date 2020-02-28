@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import StudentTopicContext from '../../context/StudentContext/studentTopicContext';
+import AlertContext from '../../context/Alert/alertContext';
 
 const TopicForm = () => {
 
   const studentTopicContext = useContext(StudentTopicContext);
+  const alertContext = useContext(AlertContext);
 
   const [proposal, setProposal] = useState({
     "studentId": '',
@@ -22,12 +24,16 @@ const TopicForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    studentTopicContext.addTopic(proposal);
-    setProposal({
-      "studentId": '',
-      "title": '',
-      "topic": ''
-    })
+    if (studentId === '' || title === '' || topic === '') {
+      alertContext.setAlert('danger', 'Please fill in all fields')
+    } else {
+      studentTopicContext.addTopic(proposal);
+      setProposal({
+        "studentId": '',
+        "title": '',
+        "topic": ''
+      })
+    }
   }
 
   return (

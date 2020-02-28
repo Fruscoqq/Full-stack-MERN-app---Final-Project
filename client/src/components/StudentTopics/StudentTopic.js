@@ -12,7 +12,7 @@ const StudentTopic = () => {
   return (
     <div>
       {studentTopics.map((currTopic) => {
-        return <StudentTopicItem key={currTopic.id} currTopic={currTopic} />
+        return <StudentTopicItem key={currTopic._id} currTopic={currTopic} />
       })}
     </div>
   )

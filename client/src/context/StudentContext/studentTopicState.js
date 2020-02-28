@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 import StudentTopicContext from './studentTopicContext';
 import StudentTopicReducer from './studentTopicReducer';
 import {
@@ -12,53 +12,38 @@ import {
   STUDENT_CLEAR_FILTER,
   STUDENT_SET_ALERT,
   STUDENT_REMOVE_ALERT,
+  STUDENT_ERROR
 } from '../types';
 
 
 const StudentTopicState = props => {
   const initialState = {
-    studentTopics: [
-      {
-        id: 1,
-        studentId: 'MER123456',
-        title: "Student Book number one",
-        topic: "Topic content goes here",
-        "role": "student"
-      },
-      {
-        id: 2,
-        studentId: 'MRT123456',
-        title: "Student Book number two",
-        topic: "Topic content goes here",
-        "role": "student"
-      },
-      {
-        id: 3,
-        studentId: 'FER123456',
-        title: "Student Book number three",
-        topic: "Topic content goes here",
-        feedback: "This is teacher added feedback",
-        grade: "8",
-        "role": "student"
-      }, {
-        id: 4,
-        studentId: 'MEL123456',
-        title: "Student Book number four",
-        topic: "Topic content goes here",
-        "role": "student"
-      }
-    ]
+    studentTopics: [],
+    error: ''
   }
 
   const [state, dispatch] = useReducer(StudentTopicReducer, initialState);
 
   // Add new topic
-  const addTopic = (topic) => {
-    topic.id = uuidv4();
-    dispatch({
-      type: STUDENT_ADD_TOPIC,
-      payload: topic
-    })
+  const addTopic = async (topic) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': localStorage.getItem('token')
+      }
+    }
+    try {
+      const res = await axios.post('/api/students', topic, config);
+      dispatch({
+        type: STUDENT_ADD_TOPIC,
+        payload: topic
+      })
+    } catch (err) {
+      dispatch({
+        type: STUDENT_ERROR,
+        payload: err.response.msg
+      })
+    }
   }
 
   // Delete topic
@@ -77,6 +62,7 @@ const StudentTopicState = props => {
     <StudentTopicContext.Provider
       value={{
         studentTopics: state.studentTopics,
+        error: state.error,
         addTopic
       }}>
       {props.children}

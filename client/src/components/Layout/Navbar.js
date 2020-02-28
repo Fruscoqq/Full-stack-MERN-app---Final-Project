@@ -13,7 +13,9 @@ const Navbar = () => {
 
   const studentLinks = (
     <Fragment>
-      <li className="nav-item"><span className="nav-link">Hello {user && user.name}</span></li>
+      <li className="nav-item nav-link">
+        <i class="fas fa-user"> Hello {user && user.name}</i>
+      </li>
       <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
       <li className="nav-item"><Link to="/about" className="nav-link">About</Link></li>
       <li className="nav-item"><Link to="/student" className="nav-link">Student</Link></li>
@@ -25,7 +27,8 @@ const Navbar = () => {
 
   const teacherLinks = (
     <Fragment>
-      <li className="nav-item"><span className="nav-link">Hello {user && user.name}</span></li>
+      <li className="nav-item nav-link"><i class="fas fa-user-tie"> Hello {user && user.name}</i>
+      </li>
       <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
       <li className="nav-item"><Link to="/about" className="nav-link">About</Link></li>
       <li className="nav-item"><Link to="/teacher" className="nav-link">Teacher</Link></li>
