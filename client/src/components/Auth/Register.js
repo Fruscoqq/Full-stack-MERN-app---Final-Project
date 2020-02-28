@@ -17,19 +17,15 @@ const Register = (props) => {
   const authContext = useContext(AuthContext);
 
   useEffect(() => {
-    if (authContext.isAuthenticated && authContext.user.role === 'Student') {
-      props.history.push('/student')
-      // console.log(authContext.user);
-    }
-    else if (authContext.isAuthenticated && authContext.user.role === 'Teacher') {
-      props.history.push('/teacher')
+    if (authContext.isAuthenticated) {
+      props.history.push('/login')
     }
 
     if (authContext.error !== null) {
       alertContext.setAlert('danger', authContext.error)
     }
     authContext.clearErrors();
-  }, [authContext.error, authContext.isAuthenticated, authContext.user, props.history])
+  }, [authContext.error, authContext.isAuthenticated, props.history])
 
   const { studentId, name, email, password, password2, role } = user;
 

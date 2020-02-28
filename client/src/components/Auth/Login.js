@@ -1,17 +1,31 @@
-import React, { useState, useContext } from 'react';
-import AuthState from '../../context/AuthContext/authState';
+import React, { useState, useContext, useEffect } from 'react';
+import AuthContext from '../../context/AuthContext/authContext';
 import AlertContext from '../../context/Alert/alertContext';
 
-const Login = () => {
+const Login = (props) => {
+  const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
 
   const [user, setUser] = useState({
     email: '',
     password: ''
   })
 
+  useEffect(() => {
+    if (authContext.isAuthenticated && authContext.user.role === 'Student') {
+      props.history.push('/student')
+    } else if (authContext.isAuthenticated && authContext.user.role === 'Teacher') {
+      props.history.push('/teacher')
+    }
+
+    if (authContext.error === 'Invalid Credentials') {
+      alertContext.setAlert('danger', 'Invalid Credentials')
+      authContext.clearErrors();
+    }
+  }, [authContext.error, authContext.isAuthenticated, authContext.user, props.history])
+
   const { email, password } = user;
 
-  const alertContext = useContext(AlertContext);
 
   const onChange = e => {
     e.preventDefault();
@@ -22,6 +36,11 @@ const Login = () => {
     e.preventDefault();
     if (email === '' || password === '') {
       alertContext.setAlert('danger', 'Please enter all fields')
+    } else {
+      authContext.login({
+        email,
+        password
+      })
     }
   }
 

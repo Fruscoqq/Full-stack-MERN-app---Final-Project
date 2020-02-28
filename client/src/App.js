@@ -8,6 +8,7 @@ import Teacher from './components/Pages/Teacher';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 import Alert from './components/Layout/Alert';
+import PrivateRoute from './components/Routing/PrivateRoute';
 
 import StudentTopicState from './context/StudentContext/studentTopicState';
 import TeacherTopicState from './context/TeacherContext/teacherTopicState';
@@ -28,8 +29,8 @@ const App = () => {
                   <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/about" component={About} />
-                    <Route exact path='/student' component={Student} />
-                    <Route exact path='/teacher' component={Teacher} />
+                    <PrivateRoute exact path='/student' component={Student} />
+                    <PrivateRoute exact path='/teacher' component={Teacher} />
                     <Route exact path='/register' component={Register} />
                     <Route exact path='/login' component={Login} />
                   </Switch>
