@@ -8,6 +8,7 @@ import {
   TEACHER_CLEAR_FILTER,
   TEACHER_SET_ALERT,
   TEACHER_REMOVE_ALERT,
+  TEACHER_GET_TOPICS
 } from '../types';
 
 export default (state, action) => {
@@ -15,7 +16,7 @@ export default (state, action) => {
     case TEACHER_DELETE_TOPIC:
       return {
         ...state,
-        teacherTopics: state.teacherTopics.filter(topic => topic.id !== action.payload)
+        teacherTopics: state.teacherTopics.filter(topic => topic._id !== action.payload)
       }
     case TEACHER_SET_CURRENT:
       return {
@@ -25,7 +26,12 @@ export default (state, action) => {
     case TEACHER_UPDATE_TOPIC:
       return {
         ...state,
-        teacherTopics: state.teacherTopics.map(topic => topic.id === action.payload.id ? action.payload : topic)
+        teacherTopics: state.teacherTopics.map(topic => topic._id === action.payload._id ? action.payload : topic)
+      }
+    case TEACHER_GET_TOPICS:
+      return {
+        ...state,
+        teacherTopics: action.payload
       }
     case TEACHER_CLEAR_CURRENT:
       return {

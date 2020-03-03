@@ -1,0 +1,88 @@
+$theme-colors: (
+  // "primary": #f5f5f5,
+  // "danger": #ff4136
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+$primary-color: rgb(20, 20, 20) !important;
+$secondary-color: rgb(242, 242, 243) !important;
+$font-stack : 'Montserrat' !important;
+
+body {
+  font-family: $font-stack;
+  overflow-x: hidden;
+  padding-top: 70px;
+  // background-image: linear-gradient(to right bottom, #faf9fe, #f5f4f9, #efeef3, #eae9ee, #e5e4e9);
+  background: #6136FF;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+nav {
+  // background-image: linear-gradient(to right, #6512e7, #6112e8, #5d12e9, #5912ea, #5412eb);
+}
+
+
+#home {
+//   .blob5 {
+//     width: 100%;
+   
+// position: absolute;
+// z-index: 0;
+// top: -900px;
+// right: -600px;
+//   }
+
+.demo {
+  position: absolute;
+  height: 700px;
+  background: rgb(5, 107, 224);
+  width: 800px;
+  top: 0;
+  right: 0;
+  border-radius: 7% 93% 0% 100% / 47% 0% 100% 53%;
+}
+
+  .showcase {
+    
+  }
+
+  .row {
+  min-height: 80vh;
+    
+    img {
+      width: 50%;
+    }
+}
+.blob {
+  max-width: 30%;
+  position: absolute;
+  top: -1rem;
+  right: 3rem;
+  opacity: .1;
+  display: block;
+}
+svg {
+  width: 100%;
+  display: block;
+  position: relative;
+  // top: -10rem;
+  background-image: rgb(51, 0, 255);
+}
+}
+
+#what-it-does {
+  background: #fff;
+}
+
+

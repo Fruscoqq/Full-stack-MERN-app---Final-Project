@@ -8,8 +8,8 @@ const Alert = () => {
   const { type, msg } = alertContext.alert;
 
   return (
-    <div className="my-3">
-      {alertContext.isAlert === true && (<div className={`alert alert-${type}`} role="alert">
+    <div className="container">
+      {alertContext.isAlert !== false && (<div className={`alert alert-${type} mt-3`} role="alert">
         <i class="fas fa-exclamation-circle"></i> {msg}
       </div>)}
     </div>

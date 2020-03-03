@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import TeacherTopicItem from './TeacherTopicItem';
 import TeacherTopicContext from '../../context/TeacherContext/teacherTopicContext';
 
@@ -9,10 +9,15 @@ const TeacherTopic = () => {
 
   const { teacherTopics } = teacherContext;
 
+  useEffect(() => {
+    teacherContext.teacherGetTopics()
+    // eslint-disable-next-line
+  }, [])
+
   return (
     <div>
       {teacherTopics.map((currTopic) => {
-        return <TeacherTopicItem key={currTopic.id} currTopic={currTopic} />
+        return <TeacherTopicItem key={currTopic._id} currTopic={currTopic} />
       })}
     </div>
   )

@@ -28,6 +28,8 @@ router.put('/:id', async (req, res) => {
   if (req.body.studentId) topicFields.studentId = req.body.studentId;
   if (req.body.title) topicFields.title = req.body.title;
   if (req.body.topic) topicFields.topic = req.body.topic;
+  if (req.body.feedback) topicFields.feedback = req.body.feedback;
+  if (req.body.grade) topicFields.grade = req.body.grade;
   if (req.body.type) topicFields.type = req.body.type;
 
   try {

@@ -22,7 +22,12 @@ const TopicSchema = mongoose.Schema({
     default: "Private"
   },
   feedback: {
-    type: String
+    type: String,
+    required: false
+  },
+  grade: {
+    type: String,
+    required: false
   },
   date: {
     type: String,

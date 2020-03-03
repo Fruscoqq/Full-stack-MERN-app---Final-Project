@@ -9,6 +9,7 @@ import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
 import Alert from './components/Layout/Alert';
 import PrivateRoute from './components/Routing/PrivateRoute';
+import "./css/styles.css"
 
 import StudentTopicState from './context/StudentContext/studentTopicState';
 import TeacherTopicState from './context/TeacherContext/teacherTopicState';
@@ -23,18 +24,16 @@ const App = () => {
           <StudentTopicState>
             <AlertState>
               <Router>
-                <Navbar />
-                <div className="container">
-                  <Alert />
-                  <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/about" component={About} />
-                    <PrivateRoute exact path='/student' component={Student} />
-                    <PrivateRoute exact path='/teacher' component={Teacher} />
-                    <Route exact path='/register' component={Register} />
-                    <Route exact path='/login' component={Login} />
-                  </Switch>
-                </div>
+                {/* <Navbar /> */}
+                <Alert />
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/about" component={About} />
+                  <PrivateRoute exact path='/student' component={Student} />
+                  <PrivateRoute exact path='/teacher' component={Teacher} />
+                  <Route exact path='/register' component={Register} />
+                  <Route exact path='/login' component={Login} />
+                </Switch>
               </Router>
             </AlertState>
           </StudentTopicState>

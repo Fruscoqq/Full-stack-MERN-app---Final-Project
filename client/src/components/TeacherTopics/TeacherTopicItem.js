@@ -3,19 +3,19 @@ import TeacherTopicContext from '../../context/TeacherContext/teacherTopicContex
 
 const TeacherTopicItem = ({ currTopic }) => {
 
-  const { id, studentId, title, topic, feedback, grade, type } = currTopic;
+  const { _id, studentId, title, topic, feedback, grade, type } = currTopic;
 
   const teacherTopicContext = useContext(TeacherTopicContext);
 
   const onDelete = () => {
-    teacherTopicContext.deleteTopic(id);
+    teacherTopicContext.deleteTopic(_id);
     teacherTopicContext.clearCurrent();
   }
 
 
   return (
     <div className="card bg-light p-2 my-1">
-      <p>{id}</p>
+      <p>{_id}</p>
       <h4 className="text-info text-left">ID: {studentId}</h4>
       <p><i class="fas fa-bookmark text-success" /> Title: {title}</p>
       <p><i class="fas fa-book-open text-info" /> Topic: {topic}</p>

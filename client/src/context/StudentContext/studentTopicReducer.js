@@ -8,7 +8,8 @@ import {
   STUDENT_CLEAR_FILTER,
   STUDENT_SET_ALERT,
   STUDENT_REMOVE_ALERT,
-  STUDENT_ERROR
+  STUDENT_ERROR,
+  STUDENT_GET_TOPICS
 } from '../types';
 
 export default (state, action) => {
@@ -17,6 +18,11 @@ export default (state, action) => {
       return {
         ...state,
         studentTopics: [...state.studentTopics, action.payload]
+      }
+    case STUDENT_GET_TOPICS:
+      return {
+        ...state,
+        studentTopics: action.payload
       }
     case STUDENT_ERROR:
       return {

@@ -1,9 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import StudentTopicItem from './StudentTopicItem';
 import StudentTopicContext from '../../context/StudentContext/studentTopicContext';
 
 
 const StudentTopic = () => {
+
+  useEffect(() => {
+    studentContext.getStudentTopics();
+    // eslint-disable-next-line
+  }, [])
 
   const studentContext = useContext(StudentTopicContext);
 

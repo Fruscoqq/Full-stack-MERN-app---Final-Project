@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import uuid from 'uuid';
+import axios from 'axios';
 import TeacherTopicContext from './teacherTopicContext';
 import TeacherTopicReducer from './teacherTopicReducer';
 import {
@@ -12,66 +13,64 @@ import {
   TEACHER_CLEAR_FILTER,
   TEACHER_SET_ALERT,
   TEACHER_REMOVE_ALERT,
+  TEACHER_GET_TOPICS
 } from '../types';
 
 
 const TeacherTopicState = props => {
   const initialState = {
-    teacherTopics: [
-      {
-        id: 5,
-        studentId: 'MER123456',
-        title: "Student Book number one",
-        topic: "Topic content goes here",
-        "role": "student",
-        feedback: 'Teacher feedback',
-        grade: '7',
-        type: 'Private'
-      },
-      {
-        id: 6,
-        studentId: 'MRT123456',
-        title: "Student Book number two",
-        topic: "Topic content goes here",
-        "role": "student",
-        feedback: '',
-        grade: '',
-        type: 'Private'
-      },
-      {
-        id: 7,
-        studentId: 'FER123456',
-        title: "Student Book number three",
-        topic: "Topic content goes here",
-        "role": "student",
-        feedback: '',
-        grade: '',
-        type: 'Public'
-      }, {
-        id: 8,
-        studentId: 'MEL123456',
-        title: "Student Book number four",
-        topic: "Topic content goes here",
-        "role": "student",
-        feedback: '',
-        grade: '',
-        type: 'Private'
-      }
-    ],
+    teacherTopics: [],
     current: null
   }
 
 
   const [state, dispatch] = useReducer(TeacherTopicReducer, initialState);
 
-  // Add new topic
+  // Get all students topics
+  // Get student topics
+  const teacherGetTopics = async () => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': localStorage.getItem('token')
+      }
+    }
+    try {
+      const res = await axios.get('/api/teachers', config);
+      dispatch({
+        type: TEACHER_GET_TOPICS,
+        payload: res.data
+      })
+    } catch (err) {
+      // dispatch({
+      //   type: STUDENT_ERROR,
+      //   payload: err.response.msg
+      // })
+      console.log(err.message);
+    }
+  }
 
   // Delete topic
-  const deleteTopic = (id) => {
-    dispatch({
-      type: TEACHER_DELETE_TOPIC,
-      payload: id
-    })
+  const deleteTopic = async (id) => {
+    const config = {
+      headers: {
+        'x-auth-token': localStorage.getItem('token')
+      }
+    }
+    try {
+      await axios.delete(`/api/teachers/${id}`, config);
+      console.log(id);
+      dispatch({
+        type: TEACHER_DELETE_TOPIC,
+        payload: id
+      })
+    } catch (err) {
+      // dispatch({
+      //   type: STUDENT_ERROR,
+      //   payload: err.response.msg
+      // })
+      console.log(err.message);
+    }
   }
 
   // Set current topic
@@ -89,11 +88,27 @@ const TeacherTopicState = props => {
     })
   }
   // Update new topic
-  const reviewTopic = (proposal) => {
-    dispatch({
-      type: TEACHER_UPDATE_TOPIC,
-      payload: proposal
-    })
+  const reviewTopic = async (proposal) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-auth-token': localStorage.getItem('token')
+      }
+    }
+    try {
+      const res = await axios.put(`/api/teachers/${proposal._id}`, proposal, config);
+      console.log(proposal);
+      dispatch({
+        type: TEACHER_UPDATE_TOPIC,
+        payload: res.data
+      })
+    } catch (err) {
+      // dispatch({
+      //   type: STUDENT_ERROR,
+      //   payload: err.response.msg
+      // })
+      console.log(err.message);
+    }
   }
 
   // Filter topics
@@ -108,7 +123,8 @@ const TeacherTopicState = props => {
         deleteTopic,
         setCurrent,
         clearCurrent,
-        reviewTopic
+        reviewTopic,
+        teacherGetTopics
       }}>
       {props.children}
     </TeacherTopicContext.Provider>
