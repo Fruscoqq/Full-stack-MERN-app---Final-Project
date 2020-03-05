@@ -1,6 +1,7 @@
 $theme-colors: (
-  // "primary": #f5f5f5,
-  // "danger": #ff4136
+  "primary": #FFFDFC,
+  "secondary": #F9A826,
+  "danger": #EB4A36
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -14,9 +15,8 @@ $font-stack : 'Montserrat' !important;
 body {
   font-family: $font-stack;
   overflow-x: hidden;
-  padding-top: 70px;
-  // background-image: linear-gradient(to right bottom, #faf9fe, #f5f4f9, #efeef3, #eae9ee, #e5e4e9);
-  background: #6136FF;
+  background:#2E38B8;
+  // background: #6136FF;
 }
 
 img {
@@ -24,44 +24,60 @@ img {
 }
 
 .wrapper {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 nav {
-  // background-image: linear-gradient(to right, #6512e7, #6112e8, #5d12e9, #5912ea, #5412eb);
+  // background:rgb(5, 107, 224);
+  transition: .3s all ease-in;
+
+  .btnSignup {
+    background: #fff;
+    color: #2E38B8;
+    &:hover {
+      background: #F9A826;
+      color: #FFFDFC;
+    }
+  }
+}
+
+.cornerWave {
+  position: absolute;
+  top: 150px;
+  transform: rotate(10deg);
+  right: 0;
+  width: 20%;
+  
 }
 
 
 #home {
-//   .blob5 {
-//     width: 100%;
-   
-// position: absolute;
-// z-index: 0;
-// top: -900px;
-// right: -600px;
-//   }
+  .blob5 {
+  width: 26%;
+  position: absolute;
+  z-index: 0;
+  top: 400px;
+  left: -100px;
+  z-index: -1;
+  transform: rotate(47deg);
+  }
 
 .demo {
   position: absolute;
-  height: 700px;
-  background: rgb(5, 107, 224);
+  height: 800px;
+  background: #436DC1;
   width: 800px;
   top: 0;
   right: 0;
   border-radius: 7% 93% 0% 100% / 47% 0% 100% 53%;
 }
 
-  .showcase {
-    
-  }
-
-  .row {
+  .showcaseRow {
   min-height: 80vh;
     
     img {
-      width: 50%;
+      width: 100%;
     }
 }
 .blob {
@@ -81,8 +97,36 @@ svg {
 }
 }
 
+#why-choose-us {
+  background: #F4F5FA;
+  .box1 {
+    img {
+      width: 20%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  .rocket{
+    position: relative;
+  }
+      .whiteBlock{
+        position: absolute;
+        width: 70px;
+        height: 230px;
+        background-color: rgb(255, 255, 255);
+        left: 50%;
+        top: 110%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .box3 {
+        img {
+          width: 20%;
+        }
+      }
+}
+
 #what-it-does {
   background: #fff;
 }
-
-
