@@ -7139,10 +7139,15 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+#footer {
+  background: url("../images/footerBg.svg") no-repeat;
+  background-size: cover;
+  background-position: center; }
+
 body {
   font-family: "Montserrat" !important;
   overflow-x: hidden;
-  background: #2E38B8; }
+  background-image: linear-gradient(to right bottom, #2e38b8, #363fba, #3d46bc, #444cbe, #4b53c0); }
 
 img {
   width: 100%; }
@@ -7153,6 +7158,8 @@ img {
 
 nav {
   transition: .3s all ease-in; }
+  nav .navbar-brand {
+    font-size: 1.6rem; }
   nav .btnSignup {
     background: #fff;
     color: #2E38B8; }
@@ -7160,14 +7167,14 @@ nav {
       background: #F9A826;
       color: #FFFDFC; }
 
-.cornerWave {
+.saturn {
   position: absolute;
   top: 150px;
   transform: rotate(10deg);
   right: 0;
-  width: 20%; }
+  width: 14%; }
 
-#home .blob5 {
+#home .earth {
   width: 26%;
   position: absolute;
   z-index: 0;
@@ -7186,7 +7193,7 @@ nav {
   border-radius: 7% 93% 0% 100% / 47% 0% 100% 53%; }
 
 #home .showcaseRow {
-  min-height: 80vh; }
+  min-height: 90vh; }
   #home .showcaseRow img {
     width: 100%; }
 
@@ -7236,7 +7243,8 @@ nav {
   background: white; }
   .contact-us .form-container .input-group {
     width: 80%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    margin-top: 2rem; }
   .contact-us .form-container .input-group-prepend {
     border: none; }
     .contact-us .form-container .input-group-prepend .input-group-text {
@@ -7255,4 +7263,74 @@ nav {
   .contact-us .form-container textarea {
     width: 80%;
     margin: 0 auto;
-    border: 1px solid #F9A826; }
+    border: 1px solid #F9A826;
+    margin-top: 2rem; }
+  .contact-us .form-container button {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 2rem; }
+
+#about {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+#footer {
+  background: url("../images/footerBg.svg") no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+#student {
+  background: #4d56dd;
+  padding: 3rem;
+  border-radius: 16px; }
+  #student .student1 {
+    overflow: hidden; }
+  #student .student2 {
+    overflow-y: scroll;
+    height: 60vh; }
+
+.studentForm input, .studentForm textarea {
+  background: #EAEEF2;
+  border: none;
+  border-radius: 16px; }
+
+.studentForm .btn {
+  color: #fff;
+  background: #EB4A36 !important; }
+
+.cardParent:nth-child(odd) .card {
+  background: #EAEEF2;
+  border-radius: 16px; }
+
+.cardParent:nth-child(odd) .feedback {
+  background: #f8b31f; }
+
+.cardParent:nth-child(odd) .grade {
+  background: #ce3232; }
+
+.cardParent:nth-child(even) .card {
+  background: #353535;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 16px; }
+  .cardParent:nth-child(even) .card .feedback {
+    background: #f8b31f; }
+  .cardParent:nth-child(even) .card .grade {
+    background: #ce3232; }
+
+::-webkit-scrollbar {
+  width: 12px;
+  /* for vertical scrollbars */
+  height: 12px;
+  /* for horizontal scrollbars */ }
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); }
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px; }

@@ -2,22 +2,30 @@ import React from 'react';
 import StudentTopic from '../StudentTopics/StudentTopic';
 import TopicForm from '../StudentTopics/TopicForm';
 import Navbar from '../Layout/Navbar';
+import Footer from '../Layout/Footer';
+import Alert from '../Layout/Alert';
 
 const Student = () => {
   return (
-    <div>
-      <Navbar />
-      <div className="container">
-        <h4>Student Page</h4>
-        <div className="row">
-          <div className="col-6">
-            <TopicForm />
-          </div>
-          <div className="col-6">
-            <StudentTopic />
+    <div className="studentMain">
+      <div id="studentSection">
+        <Navbar />
+        <div className="container">
+          <Alert />
+          <div id="student">
+            <h3 className="text-center text-light font-weight-bold py-5">Student Page</h3>
+            <div className="row">
+              <div className="col-md-6 student1">
+                <TopicForm />
+              </div>
+              <div className="col-md-6 student2 border-dark rounded">
+                <StudentTopic />
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

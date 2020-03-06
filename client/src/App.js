@@ -25,7 +25,7 @@ const App = () => {
             <AlertState>
               <Router>
                 {/* <Navbar /> */}
-                <Alert />
+                {/* <Alert /> */}
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route exact path="/about" component={About} />

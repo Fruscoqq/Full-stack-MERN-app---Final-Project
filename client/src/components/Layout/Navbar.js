@@ -1,7 +1,7 @@
 import React, { useContext, Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext/authContext';
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.svg'
 import wave from '../../images/wave.svg'
 import Headroom from 'react-headroom';
 
@@ -37,7 +37,7 @@ const Navbar = () => {
   const studentLinks = (
     <Fragment>
       <li className="nav-item nav-link text-light">
-        <i class="fas fa-user" />Hello {user && user.name}
+        <i class="fas fa-user" /> Hello {user && user.name}
       </li>
       <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
       <li className="nav-item"><Link to="/about" className="nav-link">About</Link></li>
@@ -50,7 +50,7 @@ const Navbar = () => {
 
   const teacherLinks = (
     <Fragment>
-      <li className="nav-item nav-link"><i class="fas fa-user-tie" /> {user && user.name}
+      <li className="nav-item nav-link"><i class="fas fa-user-tie" /> Hello {user && user.name}
       </li>
       <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
       <li className="nav-item"><Link to="/about" className="nav-link">About</Link></li>
@@ -83,7 +83,10 @@ const Navbar = () => {
   return (
     <div>
       {pos < 100 ? (<nav className="navbar navbar-expand-md text-primary font-weight-bold">
-        <Link className="navbar-brand ml-5 brand my-3" to="/">IdeasHub</Link>
+        <Link className="navbar-brand ml-5 brand my-3" to="/">
+          <img src={logo} alt="" style={{ width: '80px' }} />
+          {' '}IdeasHub
+        </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
