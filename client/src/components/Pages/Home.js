@@ -11,6 +11,9 @@ import smartphone from '../../images/smartphone.png';
 import planet from '../../images/planet.png';
 import moon from '../../images/moon.svg';
 import mysvg from '../../images/mysvg1.svg';
+import teacher from '../../images/teacher.svg';
+import student from '../../images/student.svg';
+import contact from '../../images/contact.svg';
 
 
 
@@ -69,7 +72,7 @@ const Home = () => {
       </div>
       <div id="why-choose-us">
         <div className="wrapper">
-          <h1 className="text-center ">Why choose this app</h1>
+          <h1 className="text-center font-weight-bold pb-3" style={{ color: '#EF5362' }}>Why choose this app</h1>
           <div className="row">
             <div className="col-4 align-self-center box1">
               <div className="text-right">
@@ -93,10 +96,10 @@ const Home = () => {
         </div>
         <img src={cloud} alt="" className="cloudImg" />
       </div>
-      <div id="what-it-does">
-        <h4 className="text-center text-danger font-weight-bold pb-3">
+      <div id="what-it-does" className="py-3">
+        <h2 className="text-center text-danger font-weight-bold pb-3">
           What this does?
-        </h4>
+        </h2>
         <div className="wrapper">
           <div className="row">
             <div className="col-6 align-self-center">
@@ -104,6 +107,56 @@ const Home = () => {
             </div>
             <div className="col-6 text-right">
               <img src={mysvg} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="student-teacher">
+        <div className="wrapper">
+          <div className="row py-5">
+            <div className="col-6 text-center border-right">
+              <div>
+                <img src={teacher} alt="" className="py-3" />
+              </div>
+              <h3 className="py-3 font-weight-bold">Teachers</h3>
+              <p className="py-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, dignissimos!</p>
+            </div>
+            <div className="col-6 text-center">
+              <div>
+                <img src={student} alt="" className="py-3" />
+              </div>
+              <h3 className="py-3 font-weight-bold">Student</h3>
+              <p className="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, perspiciatis. Non, similique!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="contact-us">
+        <div className="wrapper">
+          <div className="row py-5">
+            <div className="col-6">
+              <img src={contact} alt="" />
+            </div>
+            <div className="col-6 form-container">
+              <h2 className="text-center py-3">Contact Us</h2>
+              {/* Contact Form */}
+              <form action="/action_page.php">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-circle"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                </div>
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" />
+                </div>
+
+                <textarea class="form-control" aria-label="With textarea" placeholder="Message.."></textarea>
+              </form>
             </div>
           </div>
         </div>

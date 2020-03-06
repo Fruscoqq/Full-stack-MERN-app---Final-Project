@@ -7226,3 +7226,33 @@ nav {
 
 #what-it-does {
   background: #fff; }
+
+.student-teacher {
+  background: #F4F5FA; }
+  .student-teacher img {
+    width: 60%; }
+
+.contact-us {
+  background: white; }
+  .contact-us .form-container .input-group {
+    width: 80%;
+    margin: 0 auto; }
+  .contact-us .form-container .input-group-prepend {
+    border: none; }
+    .contact-us .form-container .input-group-prepend .input-group-text {
+      border: none;
+      background: transparent;
+      border-top: 1px solid #F9A826;
+      border-left: 1px solid #F9A826;
+      border-bottom: 1px solid #F9A826; }
+      .contact-us .form-container .input-group-prepend .input-group-text i {
+        color: #F9A826; }
+  .contact-us .form-container input {
+    border: none;
+    border-top: 1px solid #F9A826;
+    border-right: 1px solid #F9A826;
+    border-bottom: 1px solid #F9A826; }
+  .contact-us .form-container textarea {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #F9A826; }

@@ -130,3 +130,50 @@ svg {
 #what-it-does {
   background: #fff;
 }
+
+.student-teacher {
+  background: #F4F5FA;
+
+  img {
+    width: 60%;
+  }
+}
+
+.contact-us {
+  background: rgb(255, 255, 255);
+  
+  .form-container {
+    .input-group{
+      width: 80%;
+      margin: 0 auto;
+    }
+    .input-group-prepend {
+      border: none;
+
+      .input-group-text{
+        border: none;
+        background: transparent;
+        border-top: 1px solid #F9A826;
+        border-left: 1px solid #F9A826;
+        border-bottom: 1px solid #F9A826;
+
+        i{
+          color: #F9A826;
+        }
+      }
+    }
+input {
+        border: none;
+        border-top: 1px solid #F9A826;
+        border-right: 1px solid #F9A826;
+        border-bottom: 1px solid #F9A826;
+}
+textarea{
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #F9A826;
+}
+  }
+  
+  
+}
