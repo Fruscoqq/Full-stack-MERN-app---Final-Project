@@ -14,8 +14,7 @@ const TeacherTopicItem = ({ currTopic }) => {
 
 
   return (
-    <div className="card bg-light p-2 my-1">
-      <p>{_id}</p>
+    <div className="card bg-light p-3 mb-1">
       <h4 className="text-info text-left">ID: {studentId}</h4>
       <p><i class="fas fa-bookmark text-success" /> Title: {title}</p>
       <p><i class="fas fa-book-open text-info" /> Topic: {topic}</p>
@@ -27,7 +26,7 @@ const TeacherTopicItem = ({ currTopic }) => {
       )}
       <p>Type: {type}</p>
       <div>
-        <button className="btn btn-dark btn-sm mr-1" onClick={() => teacherTopicContext.setCurrent(currTopic)}>Edit</button>
+        <button className="btn btn-dark btn-sm mr-1" onClick={() => teacherTopicContext.setCurrent(currTopic)}>Review</button>
         <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
       </div>
     </div>

@@ -44,7 +44,7 @@ const Home = () => {
           <img src={saturn} alt="" />
         </div>
         <Navbar />
-        <div className="wrapper">
+        <div className="container">
           <div className="row justify-content-center align-items-center px-3 showcaseRow">
             <div className="showcase-text col-md-6 col-sm-12 text-left p-5">
               <h1 className="showcase-header py-3 font-weight-bold">Submit Your Proposals Here</h1>
@@ -61,23 +61,24 @@ const Home = () => {
         <img src={earth} alt="earth img" className="earth" />
         <img src={wave} />
       </div>
+      {/* Why choose this app */}
       <div id="why-choose-us">
-        <div className="wrapper">
+        <div className="container">
           <h1 className="text-center font-weight-bold pb-3" style={{ color: '#EF5362' }}>Why choose this app</h1>
           <div className="row">
-            <div className="col-4 align-self-center box1">
-              <div className="text-right">
+            <div className="col-sm-4 align-self-center p-3 box1">
+              <div className="">
                 <img src={computer} alt="" className="py-3" />
               </div>
-              <h3 className="text-right">It's blazing fast!</h3>
-              <p className="lead text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, assumenda?</p>
+              <h3 className="">It's blazing fast!</h3>
+              <p className="lead ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, assumenda?</p>
             </div>
-            <div className="col-4 box2">
-              <div className="whiteBlock"></div>
-              <img src={rocket} alt="" className="rocket" />
+            <div className="col-sm-4 d-sm-block d-none  p-1 box2">
+              <div className="whiteBlock d-none d-sm-block"></div>
+              <img src={rocket} alt="" className="rocket d-none d-sm-block" />
             </div>
-            <div className="col-4 align-self-center box3">
-              <div className="text-left py-3">
+            <div className="col-sm-4 align-self-center box3">
+              <div className="py-3">
                 <img src={smartphone} alt="" />
               </div>
               <h3>Works on every device!</h3>
@@ -87,11 +88,12 @@ const Home = () => {
         </div>
         <img src={cloud} alt="" className="cloudImg" />
       </div>
+      {/* What this does */}
       <div id="what-it-does" className="py-3">
         <h2 className="text-center text-danger font-weight-bold pb-3">
           What this does?
         </h2>
-        <div className="wrapper">
+        <div className="container">
           <div className="row">
             <div className="col-6 align-self-center">
               <p className="text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam distinctio eos nihil maxime reiciendis. Beatae optio similique rerum repellat error laborum?</p>
@@ -103,7 +105,7 @@ const Home = () => {
         </div>
       </div>
       <div className="student-teacher">
-        <div className="wrapper">
+        <div className="container">
           <div className="row py-5">
             <div className="col-sm-6 text-center border-right">
               <div>
@@ -123,7 +125,7 @@ const Home = () => {
         </div>
       </div>
       <div className="contact-us py-5">
-        <div className="wrapper">
+        <div className="container">
           <div className="row py-5">
             <div className="col-sm-6 align-self-center">
               <img src={contact} alt="" />

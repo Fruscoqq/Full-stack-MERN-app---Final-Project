@@ -7213,8 +7213,10 @@ nav {
 
 #why-choose-us {
   background: #F4F5FA; }
-  #why-choose-us .box1 img {
-    width: 20%; }
+  #why-choose-us .box1 {
+    text-align: right; }
+    #why-choose-us .box1 img {
+      width: 20%; }
   #why-choose-us img {
     width: 100%; }
   #why-choose-us .rocket {
@@ -7228,8 +7230,10 @@ nav {
     top: 110%;
     border-radius: 50%;
     transform: translate(-50%, -50%); }
-  #why-choose-us .box3 img {
-    width: 20%; }
+  #why-choose-us .box3 {
+    text-align: left; }
+    #why-choose-us .box3 img {
+      width: 20%; }
 
 #what-it-does {
   background: #fff; }
@@ -7322,6 +7326,26 @@ nav {
   .cardParent:nth-child(even) .card .grade {
     background: #ce3232; }
 
+#teacher .bgContainer {
+  background: #4D56DD;
+  border-radius: 16px; }
+
+#teacher .teacher1 {
+  overflow: hidden; }
+
+#teacher .teacher2 {
+  overflow-y: scroll;
+  height: 60vh; }
+
+.teacherForm input, .teacherForm textarea {
+  background: #EAEEF2;
+  border: none;
+  border-radius: 16px; }
+
+.teacherForm .btn {
+  color: #fff;
+  background: #EB4A36 !important; }
+
 ::-webkit-scrollbar {
   width: 12px;
   /* for vertical scrollbars */
@@ -7334,3 +7358,51 @@ nav {
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 10px; }
+
+@media only screen and (max-width: 768px) {
+  #why-choose-us {
+    background: #F4F5FA; }
+    #why-choose-us .box1 {
+      text-align: right; }
+      #why-choose-us .box1 img {
+        width: 30%; }
+    #why-choose-us img {
+      width: 100%; }
+    #why-choose-us .rocket {
+      position: relative; }
+    #why-choose-us .whiteBlock {
+      position: absolute;
+      width: 70px;
+      height: 230px;
+      background-color: white;
+      left: 50%;
+      top: 90%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%); }
+    #why-choose-us .box3 {
+      text-align: left; }
+      #why-choose-us .box3 img {
+        width: 30%; } }
+
+@media only screen and (max-width: 414px) {
+  #why-choose-us {
+    background: #F4F5FA; }
+    #why-choose-us h1 {
+      font-size: 2rem;
+      padding: 1rem 0; }
+    #why-choose-us .box1 {
+      text-align: center; }
+      #why-choose-us .box1 img {
+        width: 20%; }
+    #why-choose-us img {
+      width: 100%; }
+    #why-choose-us .box3 {
+      text-align: center; }
+      #why-choose-us .box3 img {
+        width: 20%; }
+  #footer {
+    background: none; }
+    #footer img {
+      width: 20% !important; }
+    #footer p {
+      font-size: 0.8rem; } }

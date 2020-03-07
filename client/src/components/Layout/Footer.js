@@ -12,7 +12,7 @@ const Footer = () => {
             </div>
             <div className="col-12 text-center py-3 text-light font-weight-bold">
               <p>Built with <i class="fas fa-heart text-danger"></i> by Arvydas</p>
-              <p>© 2020-2026 Arvydas Kelmanas All Rights Rserved</p>
+              <p>© 2020-2026 Arvydas Kelmanas All Rights Reserved</p>
             </div>
           </div>
         </div>

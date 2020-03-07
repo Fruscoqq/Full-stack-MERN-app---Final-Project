@@ -13,7 +13,7 @@ const Student = () => {
         <div className="container">
           <Alert />
           <div id="student">
-            <h3 className="text-center text-light font-weight-bold py-5">Student Page</h3>
+            <h3 className="text-center text-light font-weight-bold pb-5">Submit Your Proposal</h3>
             <div className="row">
               <div className="col-md-6 student1">
                 <TopicForm />

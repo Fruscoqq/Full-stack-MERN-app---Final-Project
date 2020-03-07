@@ -105,6 +105,7 @@ svg {
 #why-choose-us {
   background: #F4F5FA;
   .box1 {
+    text-align: right;
     img {
       width: 20%;
     }
@@ -126,6 +127,7 @@ svg {
         transform: translate(-50%, -50%);
       }
       .box3 {
+        text-align: left;
         img {
           width: 20%;
         }
@@ -218,7 +220,6 @@ button {
   padding: 3rem;
   border-radius: 16px;
   .student1{
-
    overflow:hidden;
   }
   .student2{
@@ -269,7 +270,35 @@ button {
   }
 }
 
+// Teacher
+#teacher{
+ .bgContainer {
+   background: #4D56DD;
+   border-radius: 16px;
+ }
+  .teacher1{
+    overflow: hidden;
+  }
+  .teacher2{
+    overflow-y: scroll;
+    height: 60vh;
+  }
+}
 
+.teacherForm {
+  input, textarea {
+    background: #EAEEF2;
+    border:none;
+    border-radius: 16px;
+  }
+  .btn {
+    color: #fff;
+    background: $primary-color;
+  }
+}
+
+
+// Scrollbar
 ::-webkit-scrollbar
 {
   width: 12px;  /* for vertical scrollbars */
@@ -285,4 +314,75 @@ button {
 {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+}
+
+// Media Quaries 
+// Tablet 768px
+@media only screen and (max-width: 768px) {
+  #why-choose-us {
+    background: #F4F5FA;
+    .box1 {
+      text-align: right;
+      img {
+        width: 30%;
+      }
+    }
+    img {
+      width: 100%;
+    }
+    .rocket{
+      position: relative;
+    }
+        .whiteBlock{
+          position: absolute;
+          width: 70px;
+          height: 230px;
+          background-color: rgb(255, 255, 255);
+          left: 50%;
+          top: 90%;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .box3 {
+          text-align: left;
+          img {
+            width: 30%;
+          }
+        }
+  }
+}
+
+// Phone 414px
+@media only screen and (max-width: 414px) {
+  #why-choose-us {
+    h1{
+      font-size: 2rem;
+      padding: 1rem 0;
+    }
+    background: #F4F5FA;
+  .box1 {
+    text-align: center;
+    img {
+      width: 20%;
+    }
+  }
+  img {
+    width: 100%;
+  }
+      .box3 {
+        text-align: center;
+        img {
+          width: 20%;
+        }
+      }
+  }
+  #footer{
+    background: none;
+    img{
+      width: 20% !important;
+    }
+    p{
+      font-size: 0.8rem;
+    }
+  }
 }

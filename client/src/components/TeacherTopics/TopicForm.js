@@ -48,16 +48,11 @@ const TopicForm = () => {
 
   const { studentId, title, feedback, grade, type } = proposal;
   return (
-    <form className="form-group" onSubmit={onSubmit}>
-      <h4 className="text-primary text-center">Review Student Proposals</h4>
-      <label htmlFor="studentid">Student ID</label>
+    <form className="form-group teacherForm" onSubmit={onSubmit}>
       <input type="text" id="studentid" placeholder="Enter your student ID" name="studentId" value={studentId} onChange={onChange} className="form-control mb-3 disabled" disabled />
-      <label htmlFor="titleid">Title</label>
       <input type="text" id="titleid" placeholder="Topic Title" name="title" value={title} onChange={onChange} className="form-control mb-3" disabled />
       {/*  */}
-      <label htmlFor="feedbackid">Feedback</label>
       <input type="text" id="feedbackid" placeholder="Enter your feedback" name="feedback" value={feedback} onChange={onChange} className="form-control mb-3" />
-      <label htmlFor="gradeid">Grade</label>
       <input type="text" id="gradeid" placeholder="Grade" name="grade" value={grade} onChange={onChange} className="form-control mb-3" />
       <div className="text-center my-3">
         <input type="checkbox" name="type" value="Private" checked={type === 'Private'} onChange={onChange} /> Private
