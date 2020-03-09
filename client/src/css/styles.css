@@ -7297,12 +7297,12 @@ nav {
     overflow-y: scroll;
     height: 60vh; }
 
-.studentForm input, .studentForm textarea {
+.studentForm input, .studentForm textarea, .register input, .register textarea {
   background: #EAEEF2;
   border: none;
   border-radius: 16px; }
 
-.studentForm .btn {
+.studentForm .btn, .register .btn {
   color: #fff;
   background: #EB4A36 !important; }
 
@@ -7342,9 +7342,60 @@ nav {
   border: none;
   border-radius: 16px; }
 
-.teacherForm .btn {
+.teacherForm .submitBtn {
   color: #fff;
   background: #EB4A36 !important; }
+
+.teacherForm .editBtn {
+  color: #FFFDFC;
+  background: #F9A826;
+  border-radius: 16px; }
+
+.register h2 {
+  color: #F9A826; }
+
+.register span {
+  color: #EB4A36; }
+
+.register .registerCard {
+  background: #4b53c0;
+  padding: 1.6rem 2rem;
+  border-radius: 16px; }
+  .register .registerCard .btn {
+    border-radius: 16px;
+    border: none; }
+
+.icon-bar {
+  width: 22px;
+  height: 2px;
+  background-color: #B6B6B6;
+  display: block;
+  transition: all 0.2s;
+  margin-top: 4px; }
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important; }
+
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%; }
+
+.navbar-toggler .middle-bar {
+  opacity: 0; }
+
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%; }
+
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0); }
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1; }
+
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0); }
 
 ::-webkit-scrollbar {
   width: 12px;
@@ -7360,6 +7411,13 @@ nav {
   border-radius: 10px; }
 
 @media only screen and (max-width: 768px) {
+  nav .navbar-brand {
+    font-size: 1.3rem; }
+  nav img {
+    width: 30% !important; }
+  nav ul .nav-item {
+    margin-right: 1rem !important;
+    font-size: 1.3rem; }
   #why-choose-us {
     background: #F4F5FA; }
     #why-choose-us .box1 {

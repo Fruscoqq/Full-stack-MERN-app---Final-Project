@@ -33,6 +33,7 @@ const TopicForm = () => {
         "title": '',
         "topic": ''
       })
+      alertContext.setAlert('success', 'Your proposal was successfully submited!')
     }
   }
 
@@ -44,7 +45,7 @@ const TopicForm = () => {
         <input type="text" id="titleid" placeholder="Topic Title" name="title" value={title} onChange={onChange} className="form-control mb-3" />
 
         <textarea class="form-control mb-3" id="topicid" name="topic" placeholder="Enter your text here" value={topic} onChange={onChange} rows="3"></textarea>
-        <input type="submit" value="Submit Your Work" className="btn btn-block btn-success font-weight-bold" />
+        <input type="submit" value="Submit Your Work" className="btn btn-block font-weight-bold btnSubmit" />
       </form>
     </div>
   )

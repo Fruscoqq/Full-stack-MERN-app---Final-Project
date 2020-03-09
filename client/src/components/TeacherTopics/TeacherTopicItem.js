@@ -27,7 +27,7 @@ const TeacherTopicItem = ({ currTopic }) => {
       <p>Type: {type}</p>
       <div>
         <button className="btn btn-dark btn-sm mr-1" onClick={() => teacherTopicContext.setCurrent(currTopic)}>Review</button>
-        <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
+        <button className="btn btn-danger btn-sm mr-1" onClick={onDelete}>Delete</button>
       </div>
     </div>
   )

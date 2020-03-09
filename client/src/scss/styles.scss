@@ -229,7 +229,7 @@ button {
 }
 
 // Student Form
-.studentForm {
+.studentForm, .register {
   input, textarea {
     background: #EAEEF2;
     border:none;
@@ -291,10 +291,76 @@ button {
     border:none;
     border-radius: 16px;
   }
-  .btn {
+  .submitBtn {
     color: #fff;
     background: $primary-color;
   }
+  .editBtn {
+    color: #FFFDFC;
+    background: #F9A826;
+    border-radius: 16px;
+  }
+}
+
+// Register
+.register{
+  h2{
+    color: #F9A826;
+  }
+  span{
+    color: #EB4A36;
+  }
+  .registerCard {
+    background: #4b53c0;
+    padding: 1.6rem 2rem;
+    border-radius: 16px;
+
+    .btn {
+      border-radius: 16px;
+      border: none;
+    }
+  }
+}
+
+// Hamburger Menu
+.icon-bar {
+	width: 22px; 
+	height: 2px;
+	background-color: #B6B6B6;
+	display: block;
+	transition: all 0.2s;
+	margin-top: 4px
+}
+ 
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+ 
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+ 
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+ 
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+ 
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+ 
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
 }
 
 
@@ -319,6 +385,26 @@ button {
 // Media Quaries 
 // Tablet 768px
 @media only screen and (max-width: 768px) {
+  nav{
+    .navbar-brand{
+      font-size: 1.3rem;
+    }
+    img{
+      width: 30% !important;
+    }
+    ul .nav-item {
+     margin-right: 1rem !important;
+     font-size: 1.3rem;
+    }
+    .btn {
+      // font-size: 1.3rem;
+      // padding: 0 !important;
+      // text-align: left;
+      // border: none !important;
+      // color: #1b1b1b !important;
+      // margin: .4rem 0;
+    }
+  }
   #why-choose-us {
     background: #F4F5FA;
     .box1 {
