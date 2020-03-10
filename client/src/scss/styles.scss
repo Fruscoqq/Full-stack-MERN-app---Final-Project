@@ -229,7 +229,7 @@ button {
 }
 
 // Student Form
-.studentForm, .register {
+.studentForm, .register, .login {
   input, textarea {
     background: #EAEEF2;
     border:none;
@@ -303,7 +303,7 @@ button {
 }
 
 // Register
-.register{
+.register, .login{
   h2{
     color: #F9A826;
   }
@@ -319,6 +319,29 @@ button {
       border-radius: 16px;
       border: none;
     }
+  }
+}
+
+// Login
+.login {
+  h2{
+    color: #F9A826;
+  }
+}
+.loginCard {
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 2rem;
+  background: #4b53c0;
+  border-radius: 16px;
+
+  .btn {
+    border-radius: 16px;
+  }
+
+  img {
+    width: 50%;
   }
 }
 

@@ -35,7 +35,7 @@ const Navbar = () => {
 
   const studentLinks = (
     <Fragment>
-      <li className="nav-item nav-link text-light">
+      <li className="nav-item nav-link">
         <i class="fas fa-user" /> Hello {user && user.name}
       </li>
       <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>

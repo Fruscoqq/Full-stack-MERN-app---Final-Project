@@ -57,7 +57,7 @@ const Register = (props) => {
 
   return (
     <div className='register'>
-      <div className="container">
+      <div className="container py-5" style={{ width: '900px' }}>
         <Alert />
         <h2 className="text-center py-5 font-weight-bold">Account <span className="text-primary">Register</span></h2>
         <div className="row registerCard">

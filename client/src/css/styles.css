@@ -7297,12 +7297,12 @@ nav {
     overflow-y: scroll;
     height: 60vh; }
 
-.studentForm input, .studentForm textarea, .register input, .register textarea {
+.studentForm input, .studentForm textarea, .register input, .register textarea, .login input, .login textarea {
   background: #EAEEF2;
   border: none;
   border-radius: 16px; }
 
-.studentForm .btn, .register .btn {
+.studentForm .btn, .register .btn, .login .btn {
   color: #fff;
   background: #EB4A36 !important; }
 
@@ -7351,19 +7351,34 @@ nav {
   background: #F9A826;
   border-radius: 16px; }
 
-.register h2 {
+.register h2, .login h2 {
   color: #F9A826; }
 
-.register span {
+.register span, .login span {
   color: #EB4A36; }
 
-.register .registerCard {
+.register .registerCard, .login .registerCard {
   background: #4b53c0;
   padding: 1.6rem 2rem;
   border-radius: 16px; }
-  .register .registerCard .btn {
+  .register .registerCard .btn, .login .registerCard .btn {
     border-radius: 16px;
     border: none; }
+
+.login h2 {
+  color: #F9A826; }
+
+.loginCard {
+  min-height: 50vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 2rem;
+  background: #4b53c0;
+  border-radius: 16px; }
+  .loginCard .btn {
+    border-radius: 16px; }
+  .loginCard img {
+    width: 50%; }
 
 .icon-bar {
   width: 22px;

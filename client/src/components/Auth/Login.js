@@ -1,6 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AuthContext from '../../context/AuthContext/authContext';
 import AlertContext from '../../context/Alert/alertContext';
+import Alert from '../Layout/Alert';
+import Footer from '../Layout/Footer';
+import loginImg from '../../images/loginImg.svg'
 
 
 const Login = (props) => {
@@ -46,18 +49,26 @@ const Login = (props) => {
   }
 
   return (
-    <div className="container" style={{ maxWidth: '400px' }}>
-      <h2 className="text-center py-3">Account <span className="text-primary">Login</span></h2>
-      <form className="form-group" onSubmit={onSubmit}>
+    <div className="login">
+      <div className="container py-5" style={{ width: '900px' }}>
+        <Alert />
+        <h2 className="text-center py-5 font-weight-bold">Account <span className="text-primary">Login</span></h2>
+        <div className="row loginCard">
+          <div className="col-md-6">
+            <h3 className="text-center text-primary pb-3">Type in your details</h3>
+            <form className="form-group" onSubmit={onSubmit}>
+              <input type="email" placeholder="Email" className="form-control mb-3" name='email' value={email} onChange={onChange} />
+              <input type="password" className="form-control mb-3" name='password' value={password} placeholder="Password" onChange={onChange} />
 
-        <label htmlFor="studentId">Email</label>
-        <input type="email" className="form-control mb-3" name='email' value={email} onChange={onChange} />
-
-        <label htmlFor="studentId">Password</label>
-        <input type="password" className="form-control mb-3" name='password' value={password} onChange={onChange} />
-
-        <button type="submit" className="btn btn-primary btn-block">Login</button>
-      </form>
+              <button type="submit" className="btn btn-block font-weight-bold">Login</button>
+            </form>
+          </div>
+          <div className="col-md-6 d-none d-md-block text-center">
+            <img src={loginImg} alt="login img" />
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
   )
 }
